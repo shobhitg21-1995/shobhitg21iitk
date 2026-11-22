@@ -23,6 +23,7 @@
         <a class="btn" data-link="scholar" href="#" target="_blank" rel="noopener"><span class="ic">G</span>Google Scholar</a>
         <a class="btn" data-link="orcid" href="#" target="_blank" rel="noopener"><span class="ic">iD</span>ORCID</a>
         <a class="btn" data-link="linkedin" href="#" target="_blank" rel="noopener"><span class="ic">in</span>LinkedIn</a>
+        <button type="button" class="btn" id="simBtn"><span class="ic">▶</span>Simulation contours</button>
         <a class="btn primary" data-link="collab" href="#collaborate"><span class="ic">+</span>Collaborate</a>
       </div>
 
@@ -41,21 +42,24 @@
   </aside>
 
   <main id="main">
-    <figure class="hero">
-      <video autoplay muted loop playsinline preload="metadata" poster="assets/img/needle-spray-poster.jpg" aria-label="Simulation of a needle spray from a single injector">
-        <source src="assets/video/needle-spray.mp4" type="video/mp4">
-      </video>
-      <figcaption>Contours from a VOF–LPT simulation of a needle spray from a single injector.</figcaption>
-    </figure>
-
     <section id="about">
       <h2>About</h2>
-      <p>I study how liquid fuel breaks up into droplets, evaporates and burns in turbulent flames. My PhD at IIT Kanpur combines interface-resolving simulation of atomization with large eddy simulation of the flame that follows it, and I validate the results against benchmark experiments from the University of Sydney.</p>
-      <p class="kw">Large eddy simulation · Multiple mapping conditioning · Atomization · Turbulent spray combustion · Filtered density function · OpenFOAM</p>
+      <div class="about">
+        <div class="about-text">
+          <p>I study how liquid fuel breaks up into droplets, evaporates and burns in turbulent flames. My PhD at IIT Kanpur combines interface-resolving simulation of atomization with large eddy simulation of the flame that follows it, and I validate the results against benchmark experiments from the University of Sydney.</p>
+          <p class="kw">Large eddy simulation · Multiple mapping conditioning · Atomization · Turbulent spray combustion · Filtered density function · OpenFOAM</p>
+          <p><button type="button" class="btn-main" id="simBtn2">▶ Simulation contours</button></p>
+        </div>
+        <figure class="portrait">
+          <img src="assets/img/portrait.jpg" alt="Shobhit Kumar Gautam standing beside his poster, number 133, at the 41st International Symposium on Combustion in Kyoto">
+          <figcaption>At my poster, 41st International Symposium on Combustion, Kyoto, 2026</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section id="research">
       <h2>Research</h2>
+      <div class="cards">
       <article class="item">
         <h3>Dense spray flames: from atomization to combustion</h3>
         <p>A two-stage framework models the Sydney Piloted Needle Spray Burner (SYNSBURN). A Volume-of-Fluid and Lagrangian Particle Tracking (VOF–LPT) simulation resolves the liquid breakup and passes droplet statistics to a two-phase MMC–LES combustion solver as inflow conditions. A sparse set of notional particles keeps the cost well below conventional transported-FDF methods, and results agree with gas- and liquid-phase measurements.</p>
@@ -68,10 +72,12 @@
         <h3>Multiple coaxial air-blast atomizers</h3>
         <p>Ongoing work on spray atomization in a multiple coaxial air-blast atomizer, accepted for oral presentation at ICCEU 2027.</p>
       </article>
+      </div>
     </section>
 
     <section id="publications">
       <h2>Publications</h2>
+      <div class="cards">
       <article class="item">
         <p class="cite"><strong>S. K. Gautam</strong>, G. Singh, S. De, A. R. Masri. <em>A sequential VOF–LPT and two-phase MMC–LES framework for dense spray flames.</em> Proceedings of the Combustion Institute 42 (2026) 106837.</p>
         <p class="meta">Journal article · accepted 29 June 2026</p>
@@ -82,10 +88,12 @@
         <p class="meta">Conference paper</p>
         <p class="acts"><a href="assets/files/isoc-2026-extended-abstract.pdf">Extended abstract (PDF)</a></p>
       </article>
+      </div>
     </section>
 
     <section id="conferences">
       <h2>Conferences</h2>
+      <div class="cards">
       <article class="item">
         <h3>17th International Conference on Combustion &amp; Energy Utilization (ICCEU17)</h3>
         <p class="meta">UNSW Sydney, 17–20 January 2027</p>
@@ -96,6 +104,7 @@
         <p class="meta">Kyoto International Conference Center, Japan, 26–31 July 2026</p>
         <p>Presented <em>Coupled VOF-LPT and two-phase MMC-LES simulation of dense spray flames.</em> Supported by a Combustion Institute student travel stipend.</p>
       </article>
+      </div>
     </section>
 
     <section id="posters">
@@ -135,14 +144,16 @@
 
     <section id="awards">
       <h2>Awards and grants</h2>
+      <div class="cards">
       <article class="item">
         <h3>Combustion Institute student travel stipend</h3>
         <p>Awarded for presenting at the 41st International Symposium on Combustion, Kyoto, 2026.</p>
       </article>
       <article class="item">
         <h3>IIT Kanpur AGRIM Grant 2026–27</h3>
-        <p>Applied for the Award for Graduate Research Impact and Merit (up to ₹1,00,000), based on the Proceedings of the Combustion Institute paper.</p>
+        <p>Awarded for the Proceedings of the Combustion Institute paper, under the Award for Graduate Research Impact and Merit (up to ₹1,00,000).</p>
       </article>
+      </div>
     </section>
 
     <section id="collaborate">
@@ -165,12 +176,18 @@
   </main>
 </div>
 
-<dialog id="lb" aria-label="Photo viewer">
+<dialog id="lb" class="dlg" aria-label="Photo viewer">
   <button type="button" class="lb-x" aria-label="Close">Close</button>
   <button type="button" class="lb-n prev" aria-label="Previous photo">‹</button>
   <img alt="">
   <p></p>
   <button type="button" class="lb-n next" aria-label="Next photo">›</button>
+</dialog>
+
+<dialog id="vd" class="dlg" aria-label="Simulation contours video">
+  <button type="button" class="lb-x" aria-label="Close">Close</button>
+  <video controls loop playsinline preload="none" poster="assets/img/needle-spray-poster.jpg"></video>
+  <p>Contours from a VOF–LPT simulation of a needle spray from a single injector.</p>
 </dialog>
 
 <script src="config.js"></script>
