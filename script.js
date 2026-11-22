@@ -10,7 +10,7 @@
   document.getElementById('yr').textContent = new Date().getFullYear();
 
   // highlight current section in the sidebar
-  var navLinks = document.querySelectorAll('.side nav a');
+  var navLinks = document.querySelectorAll('.tabs a');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -45,5 +45,23 @@
       if (e.key === 'ArrowLeft') show(cur - 1);
       if (e.key === 'ArrowRight') show(cur + 1);
     });
+  }
+
+  // simulation contours video
+  var vd = document.getElementById('vd');
+  var vid = vd && vd.querySelector('video');
+  function openVideo() {
+    if (!vd || !vd.showModal) return;
+    if (!vid.getAttribute('src')) vid.src = 'assets/video/needle-spray.mp4';
+    vd.showModal();
+    var p = vid.play(); if (p && p.catch) p.catch(function () {});
+  }
+  ['simBtn', 'simBtn2'].forEach(function (id) {
+    var b = document.getElementById(id); if (b) b.addEventListener('click', openVideo);
+  });
+  if (vd) {
+    vd.querySelector('.lb-x').addEventListener('click', function () { vd.close(); });
+    vd.addEventListener('click', function (e) { if (e.target === vd) vd.close(); });
+    vd.addEventListener('close', function () { vid.pause(); });
   }
 })();
