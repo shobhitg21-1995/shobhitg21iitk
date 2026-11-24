@@ -25,8 +25,6 @@
         <a class="btn" data-link="scholar" href="#" target="_blank" rel="noopener"><span class="ic">G</span>Google Scholar</a>
         <a class="btn" data-link="orcid" href="#" target="_blank" rel="noopener"><span class="ic">iD</span>ORCID</a>
         <a class="btn" data-link="linkedin" href="#" target="_blank" rel="noopener"><span class="ic">in</span>LinkedIn</a>
-        <button type="button" class="btn" id="simBtn"><span class="ic">▶</span>Simulation contours</button>
-        <a class="btn primary" data-link="collab" href="#collaborate"><span class="ic">+</span>Collaborate</a>
       </div>
       </div>
       <aside class="facts" aria-label="Highlights">
@@ -51,7 +49,7 @@
       <a href="#gallery">Photo gallery</a>
       <a href="#education">Education</a>
       <a href="#awards">Awards and grants</a>
-      <a href="#collaborate">Collaborate</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
@@ -62,7 +60,6 @@
         <div class="about-text">
           <p>I study how liquid fuel breaks up into droplets, evaporates and burns in turbulent flames. My PhD at IIT Kanpur combines interface-resolving simulation of atomization with large eddy simulation of the flame that follows it, and I validate the results against benchmark experiments from the University of Sydney.</p>
           <ul class="chips"><li>Large eddy simulation</li><li>Multiple mapping conditioning</li><li>Atomization</li><li>Turbulent spray combustion</li><li>Filtered density function</li><li>OpenFOAM</li></ul>
-          <p><button type="button" class="btn-main" id="simBtn2">▶ Simulation contours</button></p>
         </div>
         <figure class="portrait">
           <img src="assets/img/portrait.jpg" alt="Shobhit Kumar Gautam standing beside his poster, number 133, at the 41st International Symposium on Combustion in Kyoto">
@@ -77,10 +74,12 @@
       <article class="item">
         <h3>Dense spray flames: from atomization to combustion</h3>
         <p>A two-stage framework models the Sydney Piloted Needle Spray Burner (SYNSBURN). A Volume-of-Fluid and Lagrangian Particle Tracking (VOF–LPT) simulation resolves the liquid breakup and passes droplet statistics to a two-phase MMC–LES combustion solver as inflow conditions. A sparse set of notional particles keeps the cost well below conventional transported-FDF methods, and results agree with gas- and liquid-phase measurements.</p>
+        <p><button type="button" class="btn-main" data-video="assets/video/needle-spray.mp4" data-poster="assets/img/needle-spray-poster.jpg" data-caption="Contours from a VOF–LPT simulation of a needle spray from a single injector.">▶ Simulation contours</button></p>
       </article>
       <article class="item">
         <h3>Multi-element injectors for space propulsion</h3>
         <p>Using VOF–LPT in OpenFOAM with several levels of mesh refinement on an HPC cluster, I studied spray interaction between elements of injector heads of the kind used in the Space Shuttle Orbital Maneuvering System.</p>
+        <p><button type="button" class="btn-main" data-video="assets/video/oms-injector.mp4" data-poster="assets/img/oms-injector-poster.jpg" data-caption="Contours from a VOF–LPT simulation of a multi-element injector of the Space Shuttle Orbital Maneuvering System type: fuel volume fraction and droplet diameter.">▶ Simulation contours</button></p>
       </article>
       <article class="item">
         <h3>Multiple coaxial air-blast atomizers</h3>
@@ -173,18 +172,22 @@
       </div>
     </section>
 
-    <section id="collaborate">
-      <h2>Collaborate</h2>
-      <p>I welcome collaboration on spray atomization, turbulent spray combustion modelling and high-fidelity multiphase simulation. Tell me what you have in mind and I will reply.</p>
-      <ul class="areas">
-        <li>Joint papers and benchmark validation</li>
-        <li>Visits and research exchanges</li>
-        <li>Shared simulation or experimental data</li>
-        <li>Reviewing and invited talks</li>
-      </ul>
-      <p class="cta">
-        <a class="btn primary" id="mailBtn" href="mailto:shobhitg21@iitk.ac.in?subject=Research%20collaboration">Email me about a collaboration</a>
-      </p>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="cards">
+        <article class="item">
+          <h3>Institute email</h3>
+          <p><a href="mailto:shobhitg21@iitk.ac.in">shobhitg21@iitk.ac.in</a></p>
+        </article>
+        <article class="item">
+          <h3>Personal email</h3>
+          <p><a href="mailto:shobhit.gautam96@gmail.com">shobhit.gautam96@gmail.com</a></p>
+        </article>
+        <article class="item">
+          <h3>Address</h3>
+          <p>Department of Mechanical Engineering, Indian Institute of Technology Kanpur, Kanpur 208016, Uttar Pradesh, India</p>
+        </article>
+      </div>
     </section>
 
     <footer>

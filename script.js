@@ -47,19 +47,20 @@
     });
   }
 
-  // simulation contours video
+  // simulation contours video (buttons carry data-video, data-poster, data-caption)
   var vd = document.getElementById('vd');
   var vid = vd && vd.querySelector('video');
-  function openVideo() {
-    if (!vd || !vd.showModal) return;
-    if (!vid.getAttribute('src')) vid.src = 'assets/video/needle-spray.mp4';
-    vd.showModal();
-    var p = vid.play(); if (p && p.catch) p.catch(function () {});
-  }
-  ['simBtn', 'simBtn2'].forEach(function (id) {
-    var b = document.getElementById(id); if (b) b.addEventListener('click', openVideo);
-  });
-  if (vd) {
+  if (vd && vd.showModal) {
+    document.querySelectorAll('[data-video]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        vid.pause();
+        vid.poster = b.getAttribute('data-poster') || '';
+        vid.src = b.getAttribute('data-video');
+        vd.querySelector('p').textContent = b.getAttribute('data-caption') || '';
+        vd.showModal();
+        var p = vid.play(); if (p && p.catch) p.catch(function () {});
+      });
+    });
     vd.querySelector('.lb-x').addEventListener('click', function () { vd.close(); });
     vd.addEventListener('click', function (e) { if (e.target === vd) vd.close(); });
     vd.addEventListener('close', function () { vid.pause(); });
